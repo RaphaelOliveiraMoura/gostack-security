@@ -23,6 +23,7 @@
     "express-brute": "^1.0.1",
     "express-brute-redis": "^0.0.1",
     "express-handlebars": "^3.1.0",
+    "express-rate-limit": "^5.0.0",
     "faker": "^4.1.0",
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
@@ -31,6 +32,8 @@
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "polished": "^3.4.2",
+    "rate-limit-redis": "^1.7.0",
+    "redis": "^2.8.0",
     "sequelize": "^5.19.6",
     "yup": "^0.27.0"
   },
