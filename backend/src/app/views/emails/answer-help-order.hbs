@@ -1,0 +1,48 @@
+<style>
+  .content {
+    padding: 32px;
+    font-size: 16px;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .content img {
+    margin-bottom: 16px;
+  }
+
+  .content .informations {
+    display: flex;
+    flex-direction: column;
+    background: #ee4d64;
+    color: #e8e2e2;
+    width: 100%;
+    padding: 32px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="content">
+  <img src={{logo_source}} alt="GymPoint" />
+
+  <p>
+    Seu pedido de ajuda foi respondido por um de nossos funcionários.
+    Espero que esteja gostando da experiência conosco!!
+  </p>
+
+  <br />
+
+  <div class="informations">
+    <p>
+      Sua pergunta <strong>{{question}}</strong> foi respondida por um de nossos funcionários.
+    </p>
+
+    <P>
+      Resposta: <strong>{{answer}}</strong>
+    </P>
+  </div>
+
+
+</div>
