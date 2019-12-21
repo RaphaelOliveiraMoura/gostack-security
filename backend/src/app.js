@@ -21,7 +21,12 @@ class App {
 
   middlewares() {
     this.server.use(helmet());
-    this.server.use(cors({ exposedHeaders: 'total_pages' }));
+    this.server.use(
+      cors({
+        origin: 'https://fronturl.com',
+        exposedHeaders: 'total_pages',
+      })
+    );
     this.server.use(express.json());
 
     this.server.use(
