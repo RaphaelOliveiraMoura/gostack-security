@@ -1,5 +1,8 @@
 import { Router } from 'express';
 
+import Brute from 'express-brute';
+import BruteRedis from 'express-brute-redis';
+
 import authMiddleware from '~/app/middlewares/auth';
 
 import SessionController from '~/app/controllers/SessionController';
@@ -20,8 +23,20 @@ import AnswerHelpOrderValidator from '~/app/validators/AnswerHelpOrderValidator'
 
 const routes = new Router();
 
+const bruteStore = new BruteRedis({
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT,
+});
+
+const bruteForce = new Brute(bruteStore);
+
 /** Session */
-routes.post('/sessions', SessionValidator.store, SessionController.store);
+routes.post(
+  '/sessions',
+  bruteForce.prevent,
+  SessionValidator.store,
+  SessionController.store
+);
 
 /** Checkin */
 routes.get(
